@@ -1,0 +1,12 @@
+<h1>Edit Your Review</h1>
+
+<form class="" action="/reviews/<%= @review.id %>" method="post">
+  <input type="hidden" name="_method" value="patch">
+  <label for="game_title">Game Title:</label>
+  <input type="text" name="game_title" value="<%= @review.game_title %>">
+  <label for="score">Score:</label>
+  <input type="integer" name="score" value="<%= @review.score %>">
+  <label for="description">Description:</label>
+  <input type="text" name="description" value="<%= @review.description %>">
+  <input type="submit" name="" value="Edit Review">
+</form>

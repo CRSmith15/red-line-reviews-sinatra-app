@@ -19,6 +19,15 @@ class ReviewsController < ApplicationController
     redirect "/reviews/#{rev.id}"
   end
 
+  get "/reviews/:id/edit" do
+    @review = Review.find(params[:id])
+    erb :'/reviews/edit'
+  end
 
+  patch "/reviews/:id" do
+    @review = Review.find(params[:id])
+    @review.update(game_title: params[:game_title], score: params[:score], description: params[:description])
+    redirect "/reviews/#{@review.id}"
+  end
 
 end
