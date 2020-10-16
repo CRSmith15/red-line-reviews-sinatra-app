@@ -3,3 +3,8 @@
 <p>Bio: <%= @user.bio %> </p><br>
 
 <h3>Reviews:</h3>
+<ul>
+  <% @user.reviews.each do |rev| %>
+    <li><%= rev.game_title %></li>
+  <% end %>
+</ul>
