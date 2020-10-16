@@ -21,7 +21,6 @@ class UsersController < ApplicationController
 
   get "/signup" do
     erb :"/users/signup"
-    "show page for users"
   end
 
   get "/signup" do
