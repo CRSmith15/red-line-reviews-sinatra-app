@@ -5,4 +5,10 @@ class ReviewsController < ApplicationController
     erb :'reviews/index'
   end
 
+  get '/reviews/:id' do
+    @review = Review.find(params[:id])
+    erb :"reviews/show"
+
+  end
+
 end
