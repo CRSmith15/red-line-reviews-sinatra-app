@@ -6,7 +6,12 @@ class ReviewsController < ApplicationController
   end
 
   get "/reviews/new" do
-    erb :"/reviews/new"
+    if logged_in?
+      erb :"/reviews/new"
+    else
+      flash[:error] = "Log in to create a new review."
+      redirect "/"
+    end
   end
 
   get "/reviews/:id" do
