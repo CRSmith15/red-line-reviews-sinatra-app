@@ -1,7 +1,8 @@
 class ReviewsController < ApplicationController
 
   get '/reviews' do
-    "reviews"
+    @reviews = Review.all
+    erb :'reviews/index'
   end
 
 end
