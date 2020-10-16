@@ -1,3 +1,7 @@
+<% if flash[:message] %>
+  <h3><%= flash[:message] %></h3>
+<% end %>
+
 <h1> <%= @user.name %> </h1>
 
 <p>Bio: <%= @user.bio %> </p><br>
