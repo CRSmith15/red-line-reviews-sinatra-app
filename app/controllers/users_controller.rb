@@ -30,9 +30,15 @@ class UsersController < ApplicationController
   end
 
   post "/users" do
-    @user = User.create(params)
-    session[:user_id] = @user.id
-    redirect "/users/#{@user.id}"
+    @user = User.new(params)
+    if @user.save
+      flash[:message] = "Account creation successful!"
+      session[:user_id] = @user.id
+      redirect "/users/#{@user.id}"
+    else
+      flash[:error] = "Account creation failed: #{@user.errors.full_messages.to_sentence}"
+      redirect "/signup"
+    end
   end
 
   get "/users/reviews/:id" do
