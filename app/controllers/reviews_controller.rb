@@ -30,4 +30,12 @@ class ReviewsController < ApplicationController
     redirect "/reviews/#{@review.id}"
   end
 
+
+  delete "/reviews/:id" do
+    @review = Review.find(params[:id])
+    @review.destroy
+    redirect '/reviews'
+  end
+
+
 end
