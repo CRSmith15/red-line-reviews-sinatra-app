@@ -15,8 +15,14 @@ class ReviewsController < ApplicationController
   end
 
   post "/reviews" do
-    rev = Review.create(game_title: params[:game_title], score: params[:score], description: params[:description], user_id: current_user.id)
-    redirect "/reviews/#{rev.id}"
+    rev = Review.new(game_title: params[:game_title], score: params[:score], description: params[:description], user_id: current_user.id)
+    if rev.save
+      flash[:message] = "Created review successfully!"
+      redirect "/reviews/#{rev.id}"
+    else
+      flash[:error] = "Review creation failed: #{rev.errors.full_messages.to_sentence}"
+      redirect "/reviews/new"
+    end
   end
 
   get "/reviews/:id/edit" do
