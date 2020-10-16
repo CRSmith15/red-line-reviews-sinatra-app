@@ -33,6 +33,11 @@ class UsersController < ApplicationController
     redirect "/users/#{@user.id}"
   end
 
+  get "/users/reviews/:id" do
+    @review = Review.find(params[:id])
+    redirect "/reviews/#{@review.id}"
+  end
+
   get "/logout" do
     session.clear
     redirect "/"
