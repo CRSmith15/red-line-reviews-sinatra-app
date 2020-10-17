@@ -32,6 +32,28 @@
     padding: 2.25%; /* 18px / 800px */
     width: 85%;
   }
+  .nav {
+    margin: 0;
+    padding: 8px;
+    overflow: hidden;
+    background-color: #333;
+  }
+
+  .nav a {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 8px;
+    text-decoration: none;
+  }
+
+  .nav a:hover:not(.active) {
+    background-color: #9C0606;
+  }
+
+  .active a {
+    background-color: #9C0606;
+  }
 
   h1 {
     font-size: 36px;
