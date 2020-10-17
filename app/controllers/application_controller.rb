@@ -28,6 +28,10 @@ class ApplicationController < Sinatra::Base
      User.find_by(id: session[:user_id])
    end
 
+   def auth_to_edit?(rev)
+     rev.user == current_user
+   end
+
  end
 
 end

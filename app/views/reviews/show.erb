@@ -4,10 +4,14 @@
 <br>
 <h5>By: <%= @review.user.name %></h5>
 
-<a href="/reviews/<%= @review.id %>/edit">Edit Review</a>
+<% if auth_to_edit?(@review) %>
+
+  <a href="/reviews/<%= @review.id %>/edit">Edit Review</a>
 
 
-<form class="" action="/reviews/<%= @review.id %>" method="post">
-  <input type="hidden" name="_method" value="delete">
-  <input type="submit" name="" value="Delete Review">
-</form>
+  <form class="" action="/reviews/<%= @review.id %>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" name="" value="Delete Review">
+  </form>
+
+<% end %>
