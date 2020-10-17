@@ -32,14 +32,19 @@
     padding: 2.25%; /* 18px / 800px */
     width: 85%;
   }
-  .nav {
+  .nav ul {
+    list-style-type: none;
     margin: 0;
-    padding: 8px;
+    padding: 10px;
     overflow: hidden;
     background-color: #333;
   }
 
-  .nav a {
+  .nav li {
+    float: left;
+  }
+
+  .nav li a {
     background-color: #333;
     color: white;
     text-align: center;
@@ -47,11 +52,18 @@
     text-decoration: none;
   }
 
-  .nav a:hover:not(.active) {
+  .nav li a:hover {
     background-color: #9C0606;
   }
 
-  .active a {
+  .container a {
+    color: white;
+    background-color: #333;
+    text-decoration: none;
+    padding: 5px;
+  }
+
+  .container a:hover {
     background-color: #9C0606;
   }
 

@@ -20,10 +20,12 @@
 
       <div class="nav">
         <% if logged_in? %>
-          <a href="/reviews">All Reviews</a>
-          <a href="/reviews/new">Create a new Review</a>
-          <a href="/users/<%= current_user.id %>">Your Profile</a>
-          <a href="/logout">Log out</a>
+          <ul>
+            <li><a href="/reviews">All Reviews</a></li>
+            <li><a href="/reviews/new">Create a new Review</a></li>
+            <li style="float:right"><a href="/logout">Log out</a></li>
+            <li style="float:right"><a href="/users/<%= current_user.id %>">Your Profile</a></li>
+          </ul>
         <% end %>
       </div>
 
